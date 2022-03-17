@@ -15,10 +15,8 @@ class ClockPainter extends CustomPainter {
     Offset center = Offset(centerX, centerY);
 
     // Minute Calculation
-    double minX =
-        centerX + size.width * 0.35 * cos((dateTime.minute * 6) * pi / 180);
-    double minY =
-        centerY + size.width * 0.35 * sin((dateTime.minute * 6) * pi / 180);
+    double minX = centerX + size.width * 0.35 * cos((dateTime.minute * 6) * pi / 180);
+    double minY = centerY + size.width * 0.35 * sin((dateTime.minute * 6) * pi / 180);
 
     // Minute Line
     canvas.drawLine(
@@ -33,14 +31,8 @@ class ClockPainter extends CustomPainter {
     // Hour Calculation Line
     // dateTime.hour * 30 because 360/12 = 30
     // dateTime.minute * 0.5 each minute we want to turn our hour line a little
-    double hourX = centerX +
-        size.width *
-            0.3 *
-            cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
-    double hourY = centerY +
-        size.width *
-            0.3 *
-            sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+    double hourX = centerX + size.width * 0.3 * cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+    double hourY = centerY + size.width * 0.3 * sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
 
     canvas.drawLine(
       center,
@@ -54,21 +46,16 @@ class ClockPainter extends CustomPainter {
     // Second Calculation
     // size.width * 0.4 define our line height
     // dateTime.second * 6 because 360 / 60 = 6
-    double secondX =
-        centerX + size.width * 0.4 * cos((dateTime.second * 6) * pi / 180);
-    double secondY =
-        centerY + size.width * 0.4 * sin((dateTime.second * 6) * pi / 180);
+    double secondX = centerX + size.width * 0.4 * cos((dateTime.second * 6) * pi / 180);
+    double secondY = centerY + size.width * 0.4 * sin((dateTime.second * 6) * pi / 180);
 
     // Second Line
-    canvas.drawLine(center, Offset(secondX, secondY),
-        Paint()..color = Theme.of(context).primaryColor);
+    canvas.drawLine(center, Offset(secondX, secondY), Paint()..color = Theme.of(context).primaryColor);
 
-        // center Dots
-    Paint dotPainter = Paint()
-      ..color = Theme.of(context).primaryIconTheme.color;
+    // center Dots
+    Paint dotPainter = Paint()..color = Theme.of(context).primaryIconTheme.color;
     canvas.drawCircle(center, 15, dotPainter);
-    canvas.drawCircle(
-        center, 14, Paint()..color = Theme.of(context).backgroundColor);
+    canvas.drawCircle(center, 14, Paint()..color = Theme.of(context).backgroundColor);
     canvas.drawCircle(center, 8, dotPainter);
   }
 

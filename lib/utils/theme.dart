@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import './constants.dart';
+import '../constants.dart';
 
-// Our light/Primary Theme
-ThemeData themeData(BuildContext context) {
-  return ThemeData(
+class Themes {
+  static final light = ThemeData.light().copyWith(
     appBarTheme: appBarTheme,
     primaryColor: kPrimaryColor,
-    accentColor: kAccentLightColor,
     scaffoldBackgroundColor: Colors.white,
-    colorScheme: ColorScheme.light(
-      secondary: kSecondaryLightColor,
-      // on light theme surface = Colors.white by default
-    ),
     backgroundColor: Colors.white,
     iconTheme: IconThemeData(color: kBodyTextColorLight),
     accentIconTheme: IconThemeData(color: kAccentIconLightColor),
@@ -24,20 +18,16 @@ ThemeData themeData(BuildContext context) {
       headline4: TextStyle(color: kTitleTextLightColor, fontSize: 32),
       headline1: TextStyle(color: kTitleTextLightColor, fontSize: 80),
     ),
+    colorScheme: ColorScheme.light(
+      secondary: kSecondaryLightColor,
+      // on light theme surface = Colors.white by default
+    ),
   );
-}
 
-// Dark Them
-ThemeData darkThemeData(BuildContext context) {
-  return ThemeData.dark().copyWith(
+  static final dark = ThemeData.dark().copyWith(
     primaryColor: kPrimaryColor,
-    accentColor: kAccentDarkColor,
     scaffoldBackgroundColor: Color(0xFF0D0C0E),
     appBarTheme: appBarTheme,
-    colorScheme: ColorScheme.light(
-      secondary: kSecondaryDarkColor,
-      surface: kSurfaceDarkColor, 
-    ),
     backgroundColor: kBackgroundDarkColor,
     iconTheme: IconThemeData(color: kBodyTextColorDark),
     accentIconTheme: IconThemeData(color: kAccentIconDarkColor),
@@ -48,6 +38,10 @@ ThemeData darkThemeData(BuildContext context) {
       headline4: TextStyle(color: kTitleTextDarkColor, fontSize: 32),
       headline1: TextStyle(color: kTitleTextDarkColor, fontSize: 80),
     ),
+    colorScheme: ColorScheme.light(
+      secondary: kSecondaryDarkColor,
+      surface: kSurfaceDarkColor,
+    ).copyWith(secondary: kAccentDarkColor),
   );
 }
 

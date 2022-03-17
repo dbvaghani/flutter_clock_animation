@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clock_demo/utils/size_config.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../size_config.dart';
-
 class CountryCard extends StatelessWidget {
-
   const CountryCard({
     Key key,
     @required this.country,
@@ -37,10 +35,7 @@ class CountryCard extends StatelessWidget {
               children: [
                 Text(
                   country,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline4
-                      .copyWith(fontSize: getProportionateScreenWidth(16)),
+                  style: Theme.of(context).textTheme.headline4.copyWith(fontSize: getProportionateScreenWidth(16)),
                 ),
                 SizedBox(height: 5),
                 Text(timeZone),

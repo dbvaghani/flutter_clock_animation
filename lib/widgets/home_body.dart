@@ -1,13 +1,12 @@
 // svg
 // mostly use stateless widget, if needed seprate statefull widget
-// coding structure 
+// coding structure
 // size configuration
 
 import 'package:flutter/material.dart';
-
-import '../../widgets/home_screen/clock.dart';
-import '../../widgets/home_screen/country_card.dart';
-import '../../widgets/home_screen/time_widget.dart';
+import 'package:flutter_clock_demo/widgets/clock.dart';
+import 'package:flutter_clock_demo/widgets/country_card.dart';
+import 'package:flutter_clock_demo/widgets/time_widget.dart';
 
 class HomeBody extends StatelessWidget {
   @override

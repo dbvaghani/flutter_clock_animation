@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clock_demo/utils/size_config.dart';
+import 'package:flutter_clock_demo/widgets/home_body.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants.dart';
-import '../size_config.dart';
-import '../widgets/home_screen/home_body.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

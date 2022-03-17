@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_clock_demo/controllers/theme_controller.dart';
+import 'package:flutter_clock_demo/utils/size_config.dart';
+import 'package:flutter_clock_demo/widgets/clock_painter.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 import '../../constants.dart';
-import '../../provider/them_provider.dart';
-import '../../size_config.dart';
-import '../../widgets/home_screen/clock_painter.dart';
 
 class Clock extends StatefulWidget {
   @override
@@ -19,6 +19,8 @@ class _ClockState extends State<Clock> {
   DateTime _dateTime = DateTime.now();
   Timer _timer;
   final _oneSec = Duration(seconds: 1);
+
+  final ThemeController _themeController = Get.find();
 
   @override
   void initState() {
@@ -41,8 +43,7 @@ class _ClockState extends State<Clock> {
     return Stack(
       children: [
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(57)),
+          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(57)),
           child: AspectRatio(
             aspectRatio: 1,
             child: Container(
@@ -67,21 +68,22 @@ class _ClockState extends State<Clock> {
           ),
         ),
         Positioned(
-          top: getProportionateScreenWidth(15),
-          left: 0,
-          right: 0,
-          child: Consumer<ThemeProvider>(
-            builder: (context, theme, child) => GestureDetector(
-              onTap: () => theme.changeTheme(),
-              child: SvgPicture.asset(
-                theme.isLightTheme ? ImageNames.sunIcon : ImageNames.moonIcon,
-                height: 24,
-                width: 24,
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-          ),
-        ),
+            top: getProportionateScreenWidth(15),
+            left: 0,
+            right: 0,
+            child: GetX<ThemeController>(
+              builder: (_) {
+                return GestureDetector(
+                  onTap: _themeController.switchTheme,
+                  child: SvgPicture.asset(
+                    _themeController.isDarkTheme.value ? ImageNames.sunIcon : ImageNames.moonIcon,
+                    height: 24,
+                    width: 24,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                );
+              },
+            )),
       ],
     );
   }
