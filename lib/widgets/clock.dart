@@ -76,7 +76,7 @@ class _ClockState extends State<Clock> {
                 return GestureDetector(
                   onTap: _themeController.switchTheme,
                   child: SvgPicture.asset(
-                    _themeController.isDarkTheme.value ? ImageNames.sunIcon : ImageNames.moonIcon,
+                    _themeController.isLightTheme.value ? ImageNames.sunIcon : ImageNames.moonIcon,
                     height: 24,
                     width: 24,
                     color: Theme.of(context).primaryColor,
