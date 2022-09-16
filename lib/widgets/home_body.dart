@@ -34,21 +34,7 @@ class HomeBody extends StatelessWidget {
                     period: "PM",
                   ),
                   CountryCard(
-                    country: "Sydney, EU",
-                    timeZone: "+19 HRS | AEST",
-                    iconSrc: "assets/images/ic_sydeny.svg",
-                    time: "1:20",
-                    period: "PM",
-                  ),
-                  CountryCard(
-                    country: "New York, USA",
-                    timeZone: "+3 HRS | EST",
-                    iconSrc: "assets/images/ic_liberty.svg",
-                    time: "9:20",
-                    period: "PM",
-                  ),
-                  CountryCard(
-                    country: "Sydney, EU",
+                    country: "Sydney, AU",
                     timeZone: "+19 HRS | AEST",
                     iconSrc: "assets/images/ic_sydeny.svg",
                     time: "1:20",

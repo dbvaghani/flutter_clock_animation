@@ -5,22 +5,30 @@ import '../constants.dart';
 
 class Themes {
   static final light = ThemeData.light().copyWith(
+    colorScheme: ColorScheme(
+      brightness: Brightness.light,
+      primary: kPrimaryColor,
+      onPrimary: kPrimaryColor,
+      secondary: kAccentIconLightColor,
+      onBackground: kAccentIconLightColor,
+      onSecondary: kAccentIconLightColor,
+      error: Colors.red,
+      onError: Colors.red,
+      surface: Colors.white,
+      onSurface: Colors.white,
+      background: Colors.white,
+    ),
     appBarTheme: appBarTheme,
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: Colors.white,
     backgroundColor: Colors.white,
     iconTheme: IconThemeData(color: kBodyTextColorLight),
-    accentIconTheme: IconThemeData(color: kAccentIconLightColor),
     primaryIconTheme: IconThemeData(color: kPrimaryIconLightColor),
     textTheme: GoogleFonts.latoTextTheme().copyWith(
       bodyText1: TextStyle(color: kBodyTextColorLight),
       bodyText2: TextStyle(color: kBodyTextColorLight),
       headline4: TextStyle(color: kTitleTextLightColor, fontSize: 32),
       headline1: TextStyle(color: kTitleTextLightColor, fontSize: 80),
-    ),
-    colorScheme: ColorScheme.light(
-      secondary: kSecondaryLightColor,
-      // on light theme surface = Colors.white by default
     ),
   );
 
@@ -30,7 +38,6 @@ class Themes {
     appBarTheme: appBarTheme,
     backgroundColor: kBackgroundDarkColor,
     iconTheme: IconThemeData(color: kBodyTextColorDark),
-    accentIconTheme: IconThemeData(color: kAccentIconDarkColor),
     primaryIconTheme: IconThemeData(color: kPrimaryIconDarkColor),
     textTheme: GoogleFonts.latoTextTheme().copyWith(
       bodyText1: TextStyle(color: kBodyTextColorDark),
@@ -39,8 +46,17 @@ class Themes {
       headline1: TextStyle(color: kTitleTextDarkColor, fontSize: 80),
     ),
     colorScheme: ColorScheme.light(
+      brightness: Brightness.light,
+      primary: kPrimaryColor,
+      onPrimary: kPrimaryColor,
       secondary: kSecondaryDarkColor,
+      onBackground: kSecondaryDarkColor,
+      onSecondary: kAccentIconDarkColor,
+      error: Colors.red,
+      onError: Colors.red,
       surface: kSurfaceDarkColor,
+      onSurface: Colors.white,
+      background: Colors.white,
     ).copyWith(secondary: kAccentDarkColor),
   );
 }
