@@ -37,7 +37,7 @@ class CountryCard extends StatelessWidget {
                   country,
                   style: Theme.of(context)
                       .textTheme
-                      .headline4
+                      .headlineMedium
                       .copyWith(fontSize: getProportionateScreenWidth(16)),
                 ),
                 SizedBox(height: 5),
@@ -53,7 +53,7 @@ class CountryCard extends StatelessWidget {
                     Spacer(),
                     Text(
                       time,
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     RotatedBox(
                       quarterTurns: 3,

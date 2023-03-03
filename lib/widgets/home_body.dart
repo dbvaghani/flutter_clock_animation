@@ -16,8 +16,11 @@ class HomeBody extends StatelessWidget {
         width: double.infinity,
         child: Column(
           children: [
-            Text("Surat, Gujarat, India | IST",
-                style: Theme.of(context).textTheme.bodyText1),
+            Text(
+              "Dubai, UAE",
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
             TimeWidget(),
             Spacer(),
             Clock(),

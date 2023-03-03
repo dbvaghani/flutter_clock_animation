@@ -44,7 +44,7 @@ class _TimeWidgetState extends State<TimeWidget> {
           DateFormat(_showColun ? 'h:mm' : 'h mm').format(_now),
           style: Theme.of(context)
               .textTheme
-              .headline1
+              .displayLarge
               .copyWith(fontWeight: FontWeight.w400),
         ),
         SizedBox(width: 5),

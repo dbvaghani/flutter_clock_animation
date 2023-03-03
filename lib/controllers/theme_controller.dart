@@ -8,7 +8,8 @@ class ThemeController extends GetxController {
 
   var isLightTheme = false.obs;
 
-  ThemeMode get theme => _loadThemeFromStorage() ? ThemeMode.dark : ThemeMode.light;
+  ThemeMode get theme =>
+      _loadThemeFromStorage() ? ThemeMode.dark : ThemeMode.light;
 
   bool _loadThemeFromStorage() {
     isLightTheme.value = _storage.read(_themeKey) ?? true;
@@ -20,7 +21,8 @@ class ThemeController extends GetxController {
 
   ///Switch theme and save to local storage
   void switchTheme() {
-    Get.changeThemeMode(_loadThemeFromStorage() ? ThemeMode.light : ThemeMode.dark);
+    Get.changeThemeMode(
+        _loadThemeFromStorage() ? ThemeMode.light : ThemeMode.dark);
     _saveThemeToBox(!_loadThemeFromStorage());
   }
 }
